@@ -45,14 +45,12 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: |
         lcov -t "tests" -o coverage.info -c -d bit_inversion/ -d BitCounter/
-        # lcov -t "tests1" -o coverage1.info -c -d  BitCounter/
-        # lcov -t "tests" -o coverage.info -a coverage.info -a coverage1.info
-        lcov --remove coverage.info -o coverage.info '/usr/include/*' \
-          '/usr/lib/*' \
-          '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
-          '/usr/local/src/libreoffice/workdir/*' \
-          '/usr/local/src/libreoffice/instdir/*' \
-          '/usr/local/src/libreoffice/external/*'
+        lcov --remove coverage.info -o coverage.info '/usr/include/*' 
+          # '/usr/lib/*' \
+          # '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
+          # '/usr/local/src/libreoffice/workdir/*' \
+          # '/usr/local/src/libreoffice/instdir/*' \
+          # '/usr/local/src/libreoffice/external/*'
         genhtml -o report coverage.info
         ls -la
 
