@@ -17,6 +17,6 @@ TEST(BitCount, BaseTest) {
     ssIn << "2332";
     run(ssIn, ssOut);
     ssOut >> result;
-    expectedResult = 12;
+    expectedResult = 3;
     EXPECT_EQ(expectedResult, result);
 }
