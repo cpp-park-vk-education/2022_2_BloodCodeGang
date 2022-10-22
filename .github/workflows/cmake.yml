@@ -50,7 +50,7 @@ jobs:
           '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
           '/usr/local/src/libreoffice/workdir/*' \
           '/usr/local/src/libreoffice/instdir/*' \
-          '/usr/local/src/libreoffice/external/*' \
+          '/usr/local/src/libreoffice/external/*'
         genhtml -o report coverage.info
         ls -la
 
