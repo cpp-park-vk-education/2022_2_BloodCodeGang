@@ -45,8 +45,7 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: |
         lcov -t "tests" -o coverage.info -c -d bit_inversion/
-        lcov --remove coverage.info -o coverage.info
-          '/usr/include/*' \
+        lcov --remove coverage.info -o coverage.info '/usr/include/*' \
           '/usr/lib/*' \
           '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
           '/usr/local/src/libreoffice/workdir/*' \
