@@ -5,7 +5,7 @@
 #include "BitCounter.h"
 
 
-TEST(BitCount, BaseTest){
+TEST(BitCount, BaseTest) {
     std::stringstream ss_in;
     ss_in << "0 2334" << std::endl;
     std::stringstream ss_out;
