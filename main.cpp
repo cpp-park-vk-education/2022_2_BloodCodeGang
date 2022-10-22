@@ -1,13 +1,16 @@
 #include <iostream>
+
 #include "./memoryError/MemoryError.h"
 #include "./BitCounter/BitCounter.h"
-
+#include "./bit_inversion/bit_inversion.h"
 
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     run(std::cin, std::cout);
-    
+
+    start(std::cin, std::cout);
+
     int arr_size = 10;
     memoryLost(arr_size);
     extraIndex(arr_size);
