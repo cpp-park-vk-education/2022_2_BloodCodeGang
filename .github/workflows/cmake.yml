@@ -44,7 +44,9 @@ jobs:
     - name: Generate report
       working-directory: ${{github.workspace}}/build
       run: |
-        lcov -t "tests" -o coverage.info -c -d bit_inversion/
+        lcov -t "tests" -o coverage.info -c -d bit_inversion/ -d BitCounter/
+        # lcov -t "tests1" -o coverage1.info -c -d  BitCounter/
+        # lcov -t "tests" -o coverage.info -a coverage.info -a coverage1.info
         lcov --remove coverage.info -o coverage.info '/usr/include/*' \
           '/usr/lib/*' \
           '/usr/local/src/libreoffice/*/UnpackedTarball/*' \

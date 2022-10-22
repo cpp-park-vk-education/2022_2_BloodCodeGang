@@ -19,7 +19,7 @@ file(GLOB TEST_SOURCES *.cpp)
 include(GoogleTest)
 
 add_executable(${PROJECT_NAME} ${TEST_SOURCES})
-target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_INV_LIB_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_INV_LIB_LIBRARIES} GTest::gtest_main)
+target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_INV_LIB_INCLUDE_DIRS} ${BIT_LIB_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_INV_LIB_LIBRARIES} ${BIT_LIB_LIBRARIES} GTest::gtest_main)
 
 gtest_discover_tests(${PROJECT_NAME})
