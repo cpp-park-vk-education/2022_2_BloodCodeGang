@@ -13,15 +13,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install cpplint
-      working-directory: ${{github.workspace}}
-      shell: bash         
-      run: |         
-          pip install wheel
-          pip install cpplint
+    # - name: Install cpplint
+    #   working-directory: ${{github.workspace}}
+    #   shell: bash         
+    #   run: |         
+    #       pip install wheel
+    #       pip install cpplint
 
-    - name: Linters report
-      run: make check
+    # - name: Linters report
+    #   run: make check
 
     - name: Install utils
       run: |
@@ -29,7 +29,13 @@ jobs:
         echo "Valgrind installed"
         sudo apt install lcov
         echo "Lcov installed"
+        pip install wheel
+        echo "wheel installed"
+        pip install cpplint
+        echo "cpplint installed"
         
+    - name: Linters report
+      run: make check
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_FOR_TEST=1
@@ -44,7 +50,7 @@ jobs:
     - name: Generate report
       working-directory: ${{github.workspace}}/build
       run: |
-        lcov -t "tests" -o coverage.info -c -d bit_inversion/ -d BitCounter/
+        lcov -t "tests" -o coverage.info -c -d bitInversion/ -d bitCounter/
         lcov --remove coverage.info -o coverage.info '/usr/include/*' 
           # '/usr/lib/*' \
           # '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
@@ -59,11 +65,3 @@ jobs:
         name: cov-report
         path: build/report
       
-    # - name: Install cpplint
-    #   working-directory: ${{github.workspace}}
-    #   shell: bash         
-    #   run: |         
-    #       pip install wheel
-    #       pip install cpplint
-    # - name: Linters report
-    #   run: make check
