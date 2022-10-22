@@ -41,18 +41,12 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: ctest -C ${{env.BUILD_TYPE}}
 
-    - name: Gnerate report
+    - name: Generate report
       working-directory: ${{github.workspace}}/build
       run: |
         lcov -t "tests" -o coverage.info -c -d bit_inversion/
         lcov --remove coverage.info user/* -o coverage.info
-        lcov --remove coverage.info -o coverage.info
-        '/usr/include/*' \
-        '/usr/lib/*' \
-        '/usr/local/src/libreoffice/*/UnpackedTarball/*' \
-        '/usr/local/src/libreoffice/workdir/*' \
-        '/usr/local/src/libreoffice/instdir/*' \
-        '/usr/local/src/libreoffice/external/*' \
+        lcov --remove coverage.info -o coverage.info /usr/include/c++/*
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
