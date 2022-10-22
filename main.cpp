@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "./memoryError/MemoryError.h"
-#include "./BitCounter/BitCounter.h"
-#include "./bit_inversion/bit_inversion.h"
+#include "./memoryError/memoryError.h"
+#include "./bitCounter/bitCounter.h"
+#include "./bitInversion/bitInversion.h"
 
 
 int main() {

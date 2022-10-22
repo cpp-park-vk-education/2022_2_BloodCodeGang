@@ -9,9 +9,9 @@ else()
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-O3")
 endif()
 
-add_subdirectory(BitCounter)
+add_subdirectory(bitCounter)
 add_subdirectory(memoryError)
-add_subdirectory(bit_inversion)
+add_subdirectory(bitInversion)
 
 
 message("BIT_LIB_LIBRARIES = ${BIT_LIB_LIBRARIES}")

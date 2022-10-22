@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int CountsBits(unsigned number);
+int countsBits(unsigned number);
 void run(std::istream &, std::ostream &);
 
 #endif  // BITCOUNTER_BITCOUNTER_H_

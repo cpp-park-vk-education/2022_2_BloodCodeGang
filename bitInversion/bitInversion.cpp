@@ -1,4 +1,4 @@
-#include "bit_inversion.h"
+#include "bitInversion.h"
 
 unsigned int invert(unsigned int N, size_t K) {
     return N ^ (1 << K);

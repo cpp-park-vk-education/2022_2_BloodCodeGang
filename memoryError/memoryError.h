@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-int * memoryLost(int arr_size);
+int * memoryLost(int arrSize);
 
-void extraIndex(int arr_size);
+void extraIndex(int arrSize);
 
 #endif  // MEMORYERROR_MEMORYERROR_H_
