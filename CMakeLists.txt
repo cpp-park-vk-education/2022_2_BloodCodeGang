@@ -17,7 +17,3 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_LIB_LIBRARIES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${MEMORYERROR_LIB_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${MEMORYERROR_LIB_LIBRARIES})
-
-add_custom_command (TARGET ${PROJECT_NAME}
-    COMMAND bash -c "valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes $<TARGET_FILE:${PROJECT_NAME}>"
-)
