@@ -25,6 +25,12 @@ function check_log() {
 # check_log "clang-format -i -style=file ./BitCounter/*.cpp ./BitCounter/*.h" "error:"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=cpp ./BitCounter/*.cpp ./BitCounter/*.h" "Can't open for reading"
+check_log "cpplint --extensions=cpp ./bitCounter/*.cpp \
+    ./bitCounter/*.h \
+    ./bitInversion/*.cpp \
+    ./bitInversion/*.h \
+    memoryError/*cpp \
+    memoryError/*h \
+    tests/*cpp" "Can't open for reading"
 
 print_header "SUCCESS"

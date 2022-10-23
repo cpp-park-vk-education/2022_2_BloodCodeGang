@@ -1,6 +1,6 @@
-#include "BitCounter.h"
+#include "bitCounter.h"
 
-int CountBits(unsigned number) {
+int countBits(unsigned number) {
   int count = 0;
   while (number > 0) {
     if (number & 1) {
@@ -15,5 +15,5 @@ void run(std::istream &input, std::ostream &output) {
   unsigned number;
 
   input >> number;
-  output << CountBits(number) << std::endl;
+  output << countBits(number) << std::endl;
 }
