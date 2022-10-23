@@ -37,6 +37,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_LIB_LIBRARIES} ${MEMORYERROR
 if(BUILD_FOR_TEST)
 enable_testing()
 add_subdirectory(tests)
-
-
 endif()
