@@ -11,7 +11,6 @@ int main() {
 
     start(std::cin, std::cout);
 
-    int arr_size = 10;
     // memoryLost(arr_size);
     // extraIndex(arr_size);
     return 0;
