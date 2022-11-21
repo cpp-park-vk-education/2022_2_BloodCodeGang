@@ -1,8 +1,5 @@
 #include <iostream>
 
-#include "./memoryError/memoryError.h"
-#include "./bitCounter/bitCounter.h"
-#include "./bitInversion/bitInversion.h"
 
 
 int main() {

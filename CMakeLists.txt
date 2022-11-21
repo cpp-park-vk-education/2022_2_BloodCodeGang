@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(bit)
+project(events)
 
 option(BUILD_FOR_TEST "build for test" OFF)
 if(BUILD_FOR_TEST)
@@ -9,30 +9,13 @@ else()
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-O3")
 endif()
 
-add_subdirectory(bitCounter)
-add_subdirectory(memoryError)
-add_subdirectory(bitInversion)
-
-
-message("BIT_LIB_LIBRARIES = ${BIT_LIB_LIBRARIES}")
-message("BIT_LIB_INCLUDE_DIRS = ${BIT_LIB_INCLUDE_DIRS}")
-
-message("MEMORYERROR_LIB_LIBRARIES = ${MEMORYERROR_LIB_LIBRARIES}")
-message("MEMORYERROR_LIB_INCLUDE_DIRS = ${MEMORYERROR_LIB_INCLUDE_DIRS}")
-
-message("BIT_INV_LIB_INCLUDE_DIRS = ${BIT_INV_LIB_INCLUDE_DIRS}")
-message("BIT_INV_LIB_LIBRARIES = ${BIT_INV_LIB_LIBRARIES}")
+add_subdirectory(event)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_LIB_INCLUDE_DIRS} ${MEMORYERROR_LIB_INCLUDE_DIRS} ${BIT_INV_LIB_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_LIB_LIBRARIES} ${MEMORYERROR_LIB_LIBRARIES} ${BIT_INV_LIB_LIBRARIES})
+target_include_directories(${PROJECT_NAME} PUBLIC ${EVENT_LIB_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${EVENT_LIB_LIBRARIES})
 
-# target_include_directories(${PROJECT_NAME} PUBLIC ${MEMORYERROR_LIB_INCLUDE_DIRS})
-# target_link_libraries(${PROJECT_NAME} PRIVATE ${MEMORYERROR_LIB_LIBRARIES})
-
-# target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_INV_LIB_INCLUDE_DIRS})
-# target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_INV_LIB_LIBRARIES})
 
 if(BUILD_FOR_TEST)
 enable_testing()
