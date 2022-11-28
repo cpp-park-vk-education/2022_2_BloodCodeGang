@@ -53,7 +53,7 @@ jobs:
       working-directory: ${{github.workspace}}
       run: |
         ls -la
-        lcov -t "tests" -o coverage.info -c -d tests
+        lcov -t "tests" -o coverage.info -c -d bitCounter -d bitInversion
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
