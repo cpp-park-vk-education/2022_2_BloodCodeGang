@@ -58,15 +58,11 @@ jobs:
       run: |
         sudo apt install lcov
 
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: build
-
     - name: Generate report
       working-directory: ${{github.workspace}}
       run: |
-        lcov -t "tests" -o coverage.info -c -d bitInversion -d bitCounter
+        ls -la
+        lcov -t "tests" -o coverage.info -c -d build
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
