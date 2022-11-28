@@ -58,6 +58,11 @@ jobs:
       run: |
         sudo apt install lcov
 
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: build
+
     - name: Generate report
       working-directory: ${{github.workspace}}
       run: |
