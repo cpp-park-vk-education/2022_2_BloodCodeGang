@@ -64,15 +64,15 @@ jobs:
         name: build
 
     - name: Generate report
-      working-directory: ${{github.workspace}}/build
+      working-directory: ${{github.workspace}}
       run: |
-        lcov -t "tests" -o coverage.info -c -d bitInversion/ -d bitCounter/
+        lcov -t "tests" -o coverage.info -c -d bit_inversion_lib/ -d bitcount/
         genhtml -o report coverage.info
 
     - uses: actions/upload-artifact@v3
       with:
         name: coverage-report
-        path: build/report
+        path: report
 
   memtest:
     runs-on: ubuntu-latest
