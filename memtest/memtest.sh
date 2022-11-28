@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJECT_PATH="./bit"
+PROJECT_PATH="./build/bit"
 VALGRIND_LOG="valgrind.log"
 NO_LOST_PATTERN="All heap blocks were freed -- no leaks are possible"
 NO_ERROR_PATTERN="ERROR SUMMARY: 0 errors"
