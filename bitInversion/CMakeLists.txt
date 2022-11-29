@@ -1,11 +1,7 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.1.4)
 project(bit_inversion_lib)
 
 file(GLOB SOURCES *.cpp)
 file(GLOB INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
-
-set(BIT_INV_LIB_LIBRARIES ${PROJECT_NAME} PARENT_SCOPE)
-set(BIT_INV_LIB_INCLUDE_DIRS ${INCLUDE_DIRS} PARENT_SCOPE)
-

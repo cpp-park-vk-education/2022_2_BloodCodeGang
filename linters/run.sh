@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -o pipefail
 
 function print_header() {
@@ -7,30 +5,32 @@ function print_header() {
 }
 
 function check_log() {
-    LOG=$( { ${1}; } 2>&1 )
-    STATUS=$?
-    echo "$LOG"
-    if echo "$LOG" | grep -q -E "${2}"
-    then
+    local log=$($1 2>&1) # run command and save output to log
+    if [[ $log == *"$2"* ]]; then # check if log contains error
+        echo -e "\033[31m$1 failed\033[0m" # print error
+        echo "$log" # print log
         exit 1
-    fi
-
-    if [ $STATUS -ne 0 ]
-    then
-        exit $STATUS
     fi
 }
 
-# print_header "RUN clang-format"
-# check_log "clang-format -i -style=file ./BitCounter/*.cpp ./BitCounter/*.h" "error:"
+print_header "RUN clang-tidy"
+# check_log "clang-tidy ./BitCounter/*.cpp -- -std=c++17 -I./BitCounter" "error:"
+
+print_header "RUN clang-format"
+check_log "clang-format -style=file ./BitCounter/*.cpp \
+     ./BitCounter/*.hpp \
+     ./bitInversion/*.cpp\
+     memoryError/*cpp \
+     memoryError/*hpp \
+     tests/*cpp" "error:"
 
 print_header "RUN cpplint"
 check_log "cpplint --extensions=cpp ./bitCounter/*.cpp \
-    ./bitCounter/*.h \
+    ./bitCounter/*.hpp \
     ./bitInversion/*.cpp \
-    ./bitInversion/*.h \
+    ./bitInversion/*.hpp \
     memoryError/*cpp \
-    memoryError/*h \
-    tests/*cpp" "Can't open for reading"
+    memoryError/*hpp \
+    tests/*cpp" "error:"
 
 print_header "SUCCESS"

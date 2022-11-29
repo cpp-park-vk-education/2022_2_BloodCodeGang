@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.1.4)
 project(bit)
 
 option(BUILD_FOR_TEST "build for test" OFF)
@@ -27,12 +27,6 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_LIB_INCLUDE_DIRS} ${MEMORYERROR_LIB_INCLUDE_DIRS} ${BIT_INV_LIB_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_LIB_LIBRARIES} ${MEMORYERROR_LIB_LIBRARIES} ${BIT_INV_LIB_LIBRARIES})
-
-# target_include_directories(${PROJECT_NAME} PUBLIC ${MEMORYERROR_LIB_INCLUDE_DIRS})
-# target_link_libraries(${PROJECT_NAME} PRIVATE ${MEMORYERROR_LIB_LIBRARIES})
-
-# target_include_directories(${PROJECT_NAME} PUBLIC ${BIT_INV_LIB_INCLUDE_DIRS})
-# target_link_libraries(${PROJECT_NAME} PRIVATE ${BIT_INV_LIB_LIBRARIES})
 
 if(BUILD_FOR_TEST)
 enable_testing()
