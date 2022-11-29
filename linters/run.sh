@@ -14,24 +14,30 @@ function check_log() {
     fi
 }
 
-print_header "RUN clang-tidy"
-# check_log "clang-tidy ./BitCounter/*.cpp -- -std=c++17 -I./BitCounter" "error:"
-
 print_header "RUN clang-format"
 check_log "clang-format -style=file ./BitCounter/*.cpp \
-     ./BitCounter/*.hpp \
+     ./BitCounter/*.h \
      ./bitInversion/*.cpp\
      memoryError/*cpp \
-     memoryError/*hpp \
+     memoryError/*h \
      tests/*cpp" "error:"
 
 print_header "RUN cpplint"
 check_log "cpplint --extensions=cpp ./bitCounter/*.cpp \
-    ./bitCounter/*.hpp \
+    ./bitCounter/*.h \
     ./bitInversion/*.cpp \
-    ./bitInversion/*.hpp \
+    ./bitInversion/*.h \
     memoryError/*cpp \
-    memoryError/*hpp \
+    memoryError/*h \
+    tests/*cpp" "error:"
+
+print_header "RUN clang-tidy"
+check_log "clang-tidy -- -std=c++17 ./bitCounter/*.cpp \
+    ./bitCounter/*.h \
+    ./bitInversion/*.cpp \
+    ./bitInversion/*.h \
+    memoryError/*cpp \
+    memoryError/*h \
     tests/*cpp" "error:"
 
 print_header "SUCCESS"

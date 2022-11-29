@@ -14,6 +14,7 @@ jobs:
       run: |
         pip install wheel
         pip install cpplint
+        pip install clang-tidy
         
     - name: Linters report
       run: make check
