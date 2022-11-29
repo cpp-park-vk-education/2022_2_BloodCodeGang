@@ -1,0 +1,81 @@
+on:
+  [push]
+
+env: 
+  BUILD_TYPE: Release
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install utils
+      run: |
+        pip install wheel
+        pip install cpplint
+        pip install clang-tidy
+        
+    - name: Linters report
+      run: make check
+
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_FOR_TEST=1
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test
+      run: ctest -C ${{env.BUILD_TYPE}}
+
+  test-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install utils
+      run: |
+        sudo apt install lcov
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_FOR_TEST=1
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+    - name: Generate report
+      working-directory: ${{github.workspace}}/build
+      run: |
+        lcov -t "tests" -o coverage.info -c -d bitCounter -d bitInversion
+        genhtml -o report coverage.info
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: build/report
+
+  memtest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install utils
+      run: |
+        sudo apt install valgrind
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_FOR_TEST=1
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+    - name: Memtest
+      run: make memtest
