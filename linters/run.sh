@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -o pipefail
 
 function print_header() {
