@@ -46,13 +46,45 @@ cmake_ninja_workdir = /Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-d
 
 build cmake_object_order_depends_target_myprog.wt: phony || CMakeFiles/myprog.wt.dir
 
-build CMakeFiles/myprog.wt.dir/hello.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/hello.cpp || cmake_object_order_depends_target_myprog.wt
+build CMakeFiles/myprog.wt.dir/source/hello.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/source/hello.cpp || cmake_object_order_depends_target_myprog.wt
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
-  DEP_FILE = CMakeFiles/myprog.wt.dir/hello.cpp.o.d
+  DEP_FILE = CMakeFiles/myprog.wt.dir/source/hello.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
   INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/myprog.wt.dir
-  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir
+  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir/source
+
+build CMakeFiles/myprog.wt.dir/Front/src/MenuWidget.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/Front/src/MenuWidget.cpp || cmake_object_order_depends_target_myprog.wt
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
+  DEP_FILE = CMakeFiles/myprog.wt.dir/Front/src/MenuWidget.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/myprog.wt.dir
+  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir/Front/src
+
+build CMakeFiles/myprog.wt.dir/Front/src/SwipeWidget.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/Front/src/SwipeWidget.cpp || cmake_object_order_depends_target_myprog.wt
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
+  DEP_FILE = CMakeFiles/myprog.wt.dir/Front/src/SwipeWidget.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/myprog.wt.dir
+  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir/Front/src
+
+build CMakeFiles/myprog.wt.dir/Front/src/MatchProfileWidget.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/Front/src/MatchProfileWidget.cpp || cmake_object_order_depends_target_myprog.wt
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
+  DEP_FILE = CMakeFiles/myprog.wt.dir/Front/src/MatchProfileWidget.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/myprog.wt.dir
+  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir/Front/src
+
+build CMakeFiles/myprog.wt.dir/Front/src/MatchesListingWidget.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Users/aleksej/Projects/2022_2_BloodCodeGang/Front/src/MatchesListingWidget.cpp || cmake_object_order_depends_target_myprog.wt
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
+  DEP_FILE = CMakeFiles/myprog.wt.dir/Front/src/MatchesListingWidget.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/myprog.wt.dir
+  OBJECT_FILE_DIR = CMakeFiles/myprog.wt.dir/Front/src
 
 
 # =============================================================================
@@ -62,7 +94,7 @@ build CMakeFiles/myprog.wt.dir/hello.cpp.o: CXX_COMPILER__myprog.2ewt_Debug /Use
 #############################################
 # Link the executable myprog.wt
 
-build myprog.wt: CXX_EXECUTABLE_LINKER__myprog.2ewt_Debug CMakeFiles/myprog.wt.dir/hello.cpp.o | /usr/local/lib/libwthttp.4.8.2.dylib /usr/local/lib/libwt.4.8.2.dylib /opt/homebrew/lib/libboost_thread-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib /opt/homebrew/lib/libboost_atomic-mt.dylib
+build myprog.wt: CXX_EXECUTABLE_LINKER__myprog.2ewt_Debug CMakeFiles/myprog.wt.dir/source/hello.cpp.o CMakeFiles/myprog.wt.dir/Front/src/MenuWidget.cpp.o CMakeFiles/myprog.wt.dir/Front/src/SwipeWidget.cpp.o CMakeFiles/myprog.wt.dir/Front/src/MatchProfileWidget.cpp.o CMakeFiles/myprog.wt.dir/Front/src/MatchesListingWidget.cpp.o | /usr/local/lib/libwthttp.4.8.2.dylib /usr/local/lib/libwt.4.8.2.dylib /opt/homebrew/lib/libboost_thread-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib /opt/homebrew/lib/libboost_atomic-mt.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libwthttp.4.8.2.dylib  /usr/local/lib/libwt.4.8.2.dylib  /opt/homebrew/lib/libboost_thread-mt.dylib  /opt/homebrew/lib/libboost_filesystem-mt.dylib  /opt/homebrew/lib/libboost_atomic-mt.dylib
   OBJECT_DIR = CMakeFiles/myprog.wt.dir

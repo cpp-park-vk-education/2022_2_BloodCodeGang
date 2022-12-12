@@ -7,8 +7,8 @@
  ADD_DEFINITIONS(-DHPDF_DLL)
 
  ADD_EXECUTABLE(myprog.wt
-   hello.cpp
- )
+         source/hello.cpp
+         Front/src/MenuWidget.cpp Front/include/MenuWidget.h Front/src/SwipeWidget.cpp Front/include/SwipeWidget.h Front/src/MatchProfileWidget.cpp Front/include/MatchProfileWidget.h Front/src/MatchesListingWidget.cpp Front/include/MatchesListingWidget.h)
 
  TARGET_LINK_LIBRARIES(myprog.wt
    Wt::Wt

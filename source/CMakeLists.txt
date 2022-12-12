@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 project(source)
 
 SET(WT_PROJECT_SOURCE
-        ../hello.cpp
+        hello.cpp
         )
 
 FIND_PACKAGE(Wt REQUIRED)
