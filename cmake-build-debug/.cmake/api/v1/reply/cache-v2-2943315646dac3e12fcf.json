@@ -791,7 +791,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1500,6 +1500,42 @@
 			],
 			"type" : "PATH",
 			"value" : "/opt/homebrew/lib/cmake/boost_thread-1.80.0"
+		},
+		{
+			"name" : "front_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/front"
+		},
+		{
+			"name" : "front_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "front_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/aleksej/Projects/2022_2_BloodCodeGang/front"
 		},
 		{
 			"name" : "memoryError_lib_BINARY_DIR",

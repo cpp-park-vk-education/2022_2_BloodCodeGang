@@ -1,20 +1,12 @@
- CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
- Project(myproject)
- set(CMAKE_CXX_STANDARD 17)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+Project(myproject)
+set(CMAKE_CXX_STANDARD 17)
 
- FIND_PACKAGE(Wt REQUIRED Wt HTTP)
+FIND_PACKAGE(Wt REQUIRED Wt HTTP)
 
- ADD_DEFINITIONS(-DHPDF_DLL)
+ADD_DEFINITIONS(-DHPDF_DLL)
 
- ADD_EXECUTABLE(myprog.wt
-         source/hello.cpp
-         Front/src/MenuWidget.cpp Front/include/MenuWidget.h Front/src/SwipeWidget.cpp Front/include/SwipeWidget.h Front/src/MatchProfileWidget.cpp Front/include/MatchProfileWidget.h Front/src/MatchesListingWidget.cpp Front/include/MatchesListingWidget.h)
-
- TARGET_LINK_LIBRARIES(myprog.wt
-   Wt::Wt
-   Wt::HTTP
-#   debug libhpdfd optimized libhpdf # only required for if you write pdfs
- )
+add_subdirectory(front)
 
 #cmake_minimum_required(VERSION 3.19)
 #project(WT_EXAMPLE)

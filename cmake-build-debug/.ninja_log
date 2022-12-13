@@ -1,3 +1,7 @@
 # ninja log v5
-3	600	1670867468107343191	CMakeFiles/myprog.wt.dir/hello.cpp.o	26e139502b153c17
+6	567	1670911288646245456	front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o	26cc7a6eee0cb832
+6	644	1670911288722649756	front/CMakeFiles/front.wt.dir/hello.cpp.o	5dad42984ff5d94
 10	91	1670867494281570054	myprog.wt	9dbd51a880fed1c5
+644	686	1670911288768413946	front/front.wt	bd6ccbbdb65969b8
+3	600	1670867468107343191	CMakeFiles/myprog.wt.dir/hello.cpp.o	26e139502b153c17
+1	74	1670911330202539180	build.ninja	110a1f86e30c48f9

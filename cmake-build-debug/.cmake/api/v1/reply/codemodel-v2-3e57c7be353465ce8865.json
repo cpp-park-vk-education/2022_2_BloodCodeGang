@@ -6,13 +6,28 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.1"
 					},
 					"projectIndex" : 0,
-					"source" : ".",
+					"source" : "."
+				},
+				{
+					"build" : "front",
+					"jsonFile" : "directory-front-Debug-3436ff962ca6788a23a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "front",
 					"targetIndexes" : 
 					[
 						0
@@ -23,11 +38,23 @@
 			"projects" : 
 			[
 				{
+					"childIndexes" : 
+					[
+						1
+					],
 					"directoryIndexes" : 
 					[
 						0
 					],
-					"name" : "myproject",
+					"name" : "myproject"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "front",
+					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
 						0
@@ -37,11 +64,11 @@
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 0,
-					"id" : "myprog.wt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-myprog.wt-Debug-673712b7e142d51cd724.json",
-					"name" : "myprog.wt",
-					"projectIndex" : 0
+					"directoryIndex" : 1,
+					"id" : "front.wt::@b6b08ae142776104c4e9",
+					"jsonFile" : "target-front.wt-Debug-10efc7ac24d7b6c865e7.json",
+					"name" : "front.wt",
+					"projectIndex" : 1
 				}
 			]
 		}

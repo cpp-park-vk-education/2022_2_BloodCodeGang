@@ -392,6 +392,9 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/local/lib/cmake/wt/wt-target-dbosqlite3-relwithdebinfo.cmake"
+		},
+		{
+			"path" : "front/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
