@@ -54,15 +54,18 @@ MenuWidget::MenuWidget() {
 //    title->setStyleClass("table");
     addWidget(std::move(container1));
 
-    auto container = std::make_unique<Wt::WContainerWidget>();
+//    auto container = std::make_unique<Wt::WContainerWidget>();
+//
+//    container->addNew<Wt::WText>("A first widget");
+//
+//    for (unsigned int i = 0; i < 3; ++i) {
+//        // A widget can be added to a container by using addWidget()
+//        container->addNew<Wt::WText>(Wt::WString("<p>Text {1}</p>").arg(i));
+//    }
+//    addWidget(std::move(container));
 
-    container->addNew<Wt::WText>("A first widget");
 
-    for (unsigned int i = 0; i < 3; ++i) {
-        // A widget can be added to a container by using addWidget()
-        container->addNew<Wt::WText>(Wt::WString("<p>Text {1}</p>").arg(i));
-    }
-    addWidget(std::move(container));
+
 //    setStyleClass("container bg-primary");
 //    widgets_stack = new Wt::WStackedWidget(); //В этом "контейнере" будет появляться виджет, соответствующий текущему пункту меню
 //    widgets_stack->setStyleClass("container");
