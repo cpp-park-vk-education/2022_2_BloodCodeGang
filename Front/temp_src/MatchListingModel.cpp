@@ -2,7 +2,7 @@
 // Created by Алексей on 21.11.2022.
 //
 
-#include "../include/MatchListingModel.h"
+#include "../temp_include/MatchListingModel.h"
 
 
 std::vector<UserInfo> MatchListingModel::getUsersInfo() {

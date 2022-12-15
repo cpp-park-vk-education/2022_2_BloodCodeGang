@@ -12,23 +12,24 @@
 		[
 			"ADD_EXECUTABLE",
 			"TARGET_LINK_LIBRARIES",
-			"set_target_properties",
-			"include",
-			"FIND_PACKAGE",
 			"set_property",
 			"find_package",
 			"boost_find_component",
-			"ADD_DEFINITIONS"
+			"FIND_PACKAGE",
+			"set_target_properties",
+			"include",
+			"ADD_DEFINITIONS",
+			"INCLUDE_DIRECTORIES"
 		],
 		"files" : 
 		[
 			"front/CMakeLists.txt",
-			"/usr/local/lib/cmake/wt/wt-target-wt.cmake",
-			"/usr/local/lib/cmake/wt/wt-config.cmake",
-			"CMakeLists.txt",
 			"/opt/homebrew/lib/cmake/boost_filesystem-1.80.0/boost_filesystem-config.cmake",
 			"/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake",
-			"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake"
+			"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake",
+			"/usr/local/lib/cmake/wt/wt-config.cmake",
+			"CMakeLists.txt",
+			"/usr/local/lib/cmake/wt/wt-target-wt.cmake"
 		],
 		"nodes" : 
 		[
@@ -44,85 +45,91 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 11,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
-				"file" : 3
+				"file" : 5
 			},
 			{
-				"command" : 4,
-				"file" : 3,
+				"command" : 5,
+				"file" : 5,
 				"line" : 5,
 				"parent" : 3
 			},
 			{
-				"file" : 2,
+				"file" : 4,
 				"parent" : 4
 			},
 			{
 				"command" : 3,
-				"file" : 2,
-				"line" : 10,
-				"parent" : 5
-			},
-			{
-				"file" : 1,
-				"parent" : 6
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 61,
-				"parent" : 7
-			},
-			{
-				"command" : 6,
-				"file" : 2,
+				"file" : 4,
 				"line" : 5,
 				"parent" : 5
 			},
 			{
-				"file" : 6,
+				"file" : 3,
+				"parent" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 594,
+				"parent" : 7
+			},
+			{
+				"file" : 2,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 262,
 				"parent" : 9
 			},
 			{
-				"command" : 6,
-				"file" : 6,
-				"line" : 594,
+				"command" : 3,
+				"file" : 2,
+				"line" : 141,
 				"parent" : 10
 			},
 			{
-				"file" : 5,
+				"file" : 1,
 				"parent" : 11
 			},
 			{
-				"command" : 7,
-				"file" : 5,
-				"line" : 262,
+				"command" : 2,
+				"file" : 1,
+				"line" : 103,
 				"parent" : 12
 			},
 			{
-				"command" : 6,
-				"file" : 5,
-				"line" : 141,
-				"parent" : 13
+				"command" : 7,
+				"file" : 4,
+				"line" : 10,
+				"parent" : 5
 			},
 			{
-				"file" : 4,
+				"file" : 6,
 				"parent" : 14
 			},
 			{
-				"command" : 5,
-				"file" : 4,
-				"line" : 103,
+				"command" : 6,
+				"file" : 6,
+				"line" : 61,
 				"parent" : 15
 			},
 			{
 				"command" : 8,
-				"file" : 3,
-				"line" : 7,
+				"file" : 5,
+				"line" : 8,
 				"parent" : 3
+			},
+			{
+				"command" : 9,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
 			}
 		]
 	},
@@ -172,14 +179,14 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 18,
 					"isSystem" : true,
-					"path" : "/usr/local/include"
+					"path" : "/opt/homebrew/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/opt/homebrew/include"
+					"path" : "/usr/local/include"
 				}
 			],
 			"language" : "CXX",
@@ -226,18 +233,18 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 8,
-				"fragment" : "/opt/homebrew/lib/libboost_thread-mt.dylib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 8,
+				"backtrace" : 2,
 				"fragment" : "/opt/homebrew/lib/libboost_filesystem-mt.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 16,
+				"backtrace" : 13,
 				"fragment" : "/opt/homebrew/lib/libboost_atomic-mt.dylib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "/opt/homebrew/lib/libboost_thread-mt.dylib",
 				"role" : "libraries"
 			}
 		],

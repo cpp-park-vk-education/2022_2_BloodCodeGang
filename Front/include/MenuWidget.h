@@ -5,13 +5,19 @@
 #ifndef MYPROJECT_MENUWIDGET_H
 #define MYPROJECT_MENUWIDGET_H
 
+#include <Wt/WAnchor.h>
 #include <Wt/WContainerWidget.h>
+#include <Wt/WLink.h>
+#include <Wt/WStackedWidget.h>
+
+#include <Wt/WAnchor.h>
 #include <Wt/WText.h>
-
-
-#include "MatchesListingWidget.h"
-#include "MatchProfileWidget.h"
-#include "SwipeWidget.h"
+#include <Wt/WStackedWidget.h>
+#include <Wt/WVBoxLayout.h>
+#include <Wt/WHBoxLayout.h>
+#include <Wt/WApplication.h>
+#include <Wt/Auth/AuthWidget.h>
+#include <Wt/Auth/RegistrationModel.h>
 
 
 class MenuWidget : public Wt::WContainerWidget {
@@ -24,16 +30,20 @@ private:
     void showMatchListing();
     void showMatchProfile();
 
-    Wt::WStackedWidget* mainStack_;
-    Wt::WNavigationBar* navbar;
+    Wt::WStackedWidget* widgets_stack;
+    Wt::WNavigationBar* nav_bar;
     Wt::WMenu* left_menu;
+
+    Wt::WContainerWidget* links;
     Wt::WMenuItem* profile;
     Wt::WMenuItem* recommended;
     Wt::WMenuItem* my_matches;
 
-    MatchesListingWidget match_listing;
-    MatchProfileWidget match_profile;
-    SwipeWidget swipe;
+    Wt::WAnchor* swipeAnchor;
+    Wt::WAnchor* listingAnchor;
+
+//    MatchesListingWidget match_listing;
+//    SwipeWidget swipe;
 };
 
 

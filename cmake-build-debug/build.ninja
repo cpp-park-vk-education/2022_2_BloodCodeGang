@@ -78,7 +78,7 @@ build front/CMakeFiles/front.wt.dir/front.cpp.o: CXX_COMPILER__front.2ewt_Debug 
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
   DEP_FILE = front/CMakeFiles/front.wt.dir/front.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
-  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  INCLUDES = -isystem /opt/homebrew/include -isystem /usr/local/include
   OBJECT_DIR = front/CMakeFiles/front.wt.dir
   OBJECT_FILE_DIR = front/CMakeFiles/front.wt.dir
 
@@ -86,7 +86,7 @@ build front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o: CXX_COMPILER__front.2e
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
   DEP_FILE = front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
-  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  INCLUDES = -isystem /opt/homebrew/include -isystem /usr/local/include
   OBJECT_DIR = front/CMakeFiles/front.wt.dir
   OBJECT_FILE_DIR = front/CMakeFiles/front.wt.dir/src
 
@@ -98,9 +98,9 @@ build front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o: CXX_COMPILER__front.2e
 #############################################
 # Link the executable front/front.wt
 
-build front/front.wt: CXX_EXECUTABLE_LINKER__front.2ewt_Debug front/CMakeFiles/front.wt.dir/front.cpp.o front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o | /usr/local/lib/libwthttp.4.8.2.dylib /usr/local/lib/libwt.4.8.2.dylib /opt/homebrew/lib/libboost_thread-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib /opt/homebrew/lib/libboost_atomic-mt.dylib
+build front/front.wt: CXX_EXECUTABLE_LINKER__front.2ewt_Debug front/CMakeFiles/front.wt.dir/front.cpp.o front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o | /usr/local/lib/libwthttp.4.8.2.dylib /usr/local/lib/libwt.4.8.2.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib /opt/homebrew/lib/libboost_atomic-mt.dylib /opt/homebrew/lib/libboost_thread-mt.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libwthttp.4.8.2.dylib  /usr/local/lib/libwt.4.8.2.dylib  /opt/homebrew/lib/libboost_thread-mt.dylib  /opt/homebrew/lib/libboost_filesystem-mt.dylib  /opt/homebrew/lib/libboost_atomic-mt.dylib
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libwthttp.4.8.2.dylib  /usr/local/lib/libwt.4.8.2.dylib  /opt/homebrew/lib/libboost_filesystem-mt.dylib  /opt/homebrew/lib/libboost_atomic-mt.dylib  /opt/homebrew/lib/libboost_thread-mt.dylib
   OBJECT_DIR = front/CMakeFiles/front.wt.dir
   POST_BUILD = :
   PRE_LINK = :

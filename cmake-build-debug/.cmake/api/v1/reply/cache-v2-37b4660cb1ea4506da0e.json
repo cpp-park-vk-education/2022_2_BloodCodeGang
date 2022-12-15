@@ -1190,6 +1190,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Boost",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Boost"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake][cfound components: filesystem ][v1.80.0()]"
+		},
+		{
 			"name" : "Project_BINARY_DIR",
 			"properties" : 
 			[

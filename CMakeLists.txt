@@ -3,6 +3,7 @@ Project(myproject)
 set(CMAKE_CXX_STANDARD 17)
 
 FIND_PACKAGE(Wt REQUIRED Wt HTTP)
+find_package(Boost COMPONENTS filesystem)
 
 ADD_DEFINITIONS(-DHPDF_DLL)
 

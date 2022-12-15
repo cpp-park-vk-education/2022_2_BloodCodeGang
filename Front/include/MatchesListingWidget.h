@@ -5,8 +5,18 @@
 #ifndef MYPROJECT_MATCHESLISTINGWIDGET_H
 #define MYPROJECT_MATCHESLISTINGWIDGET_H
 
+#include "MatchIconsWidget.h"
 
-class MatchesListingWidget {
+
+class MatchesListingWidget : public Wt::WContainerWidget {
+
+public:
+    MatchesListingWidget();
+
+private:
+    std::vector<MatchIconsWidget> match_icons;
+    Wt::WPushButton* cancel_match_button;
+    Wt::WImage* profile_image;
 
 };
 
