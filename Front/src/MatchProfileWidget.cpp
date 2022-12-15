@@ -2,7 +2,7 @@
 // Created by Алексей on 12.12.2022.
 //
 
-#include "../include/MatchProfileWidget.h"
+#include "MatchProfileWidget.h"
 
 
 MatchProfileWidget::MatchProfileWidget() {

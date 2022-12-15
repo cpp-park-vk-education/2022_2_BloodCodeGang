@@ -5,16 +5,11 @@
 
 #include <Wt/WApplication.h>
 #include <Wt/WServer.h>
+#include <Wt/WBootstrap5Theme.h>
 
-#include "include/MenuWidget.h"
+#include "MenuWidget.h"
 //#include "Session.h"
 
-
-#include <Wt/WApplication.h>
-#include <Wt/WContainerWidget.h>
-#include <Wt/WPushButton.h>
-#include <Wt/WText.h>
-#include <Wt/WTable.h>
 
 
 
@@ -29,13 +24,10 @@ std::unique_ptr<Wt::WApplication> createApplication(const Wt::WEnvironment& env)
 
 //    app->useStyleSheet("css/hangman.css");
 
-//    app->useStyleSheet("static/css/bootstrap.css");
-//    app->useStyleSheet("static/css/style.css");
-    Wt::WApplication::instance()->useStyleSheet("style.css");
-
+//    app->useStyleSheet("css/bootstrap.min.css");
+//    app->useStyleSheet("css/styler.css");
+    app->setTheme(std::make_shared<Wt::WBootstrap5Theme>());
     app->root()->addWidget(std::make_unique<MenuWidget>());
-//    app->root()->addWidget(std::move(container));
-
     return app;
 }
 

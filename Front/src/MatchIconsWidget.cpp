@@ -2,7 +2,7 @@
 // Created by Алексей on 13.12.2022.
 //
 
-#include "../include/MatchIconsWidget.h"
+#include "MatchIconsWidget.h"
 
 
 MatchIconsWidget::MatchIconsWidget() {

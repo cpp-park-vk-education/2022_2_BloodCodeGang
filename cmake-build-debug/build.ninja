@@ -78,7 +78,7 @@ build front/CMakeFiles/front.wt.dir/front.cpp.o: CXX_COMPILER__front.2ewt_Debug 
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
   DEP_FILE = front/CMakeFiles/front.wt.dir/front.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
-  INCLUDES = -isystem /opt/homebrew/include -isystem /usr/local/include
+  INCLUDES = -I/Users/aleksej/Projects/2022_2_BloodCodeGang/front/include -isystem /opt/homebrew/include -isystem /usr/local/include
   OBJECT_DIR = front/CMakeFiles/front.wt.dir
   OBJECT_FILE_DIR = front/CMakeFiles/front.wt.dir
 
@@ -86,7 +86,7 @@ build front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o: CXX_COMPILER__front.2e
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHPDF_DLL
   DEP_FILE = front/CMakeFiles/front.wt.dir/src/MenuWidget.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17
-  INCLUDES = -isystem /opt/homebrew/include -isystem /usr/local/include
+  INCLUDES = -I/Users/aleksej/Projects/2022_2_BloodCodeGang/front/include -isystem /opt/homebrew/include -isystem /usr/local/include
   OBJECT_DIR = front/CMakeFiles/front.wt.dir
   OBJECT_FILE_DIR = front/CMakeFiles/front.wt.dir/src
 

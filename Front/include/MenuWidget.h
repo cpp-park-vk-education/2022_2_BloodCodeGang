@@ -10,14 +10,15 @@
 #include <Wt/WLink.h>
 #include <Wt/WStackedWidget.h>
 
-#include <Wt/WAnchor.h>
-#include <Wt/WText.h>
+#include <Wt/WLineEdit.h>
+#include <Wt/WMenu.h>
+#include <Wt/WMessageBox.h>
+#include <Wt/WNavigationBar.h>
+#include <Wt/WPopupMenu.h>
+#include <Wt/WPopupMenuItem.h>
 #include <Wt/WStackedWidget.h>
-#include <Wt/WVBoxLayout.h>
-#include <Wt/WHBoxLayout.h>
-#include <Wt/WApplication.h>
-#include <Wt/Auth/AuthWidget.h>
-#include <Wt/Auth/RegistrationModel.h>
+#include <Wt/WText.h>
+
 
 
 class MenuWidget : public Wt::WContainerWidget {
