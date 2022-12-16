@@ -31,7 +31,7 @@ private:
     void showMatchListing();
     void showMatchProfile();
 
-    Wt::WStackedWidget* widgets_stack;
+    Wt::WStackedWidget* content_stack;
     Wt::WNavigationBar* nav_bar;
     Wt::WMenu* left_menu;
 
