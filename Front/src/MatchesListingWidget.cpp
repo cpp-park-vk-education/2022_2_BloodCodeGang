@@ -5,6 +5,68 @@
 #include "MatchesListingWidget.h"
 
 MatchesListingWidget::MatchesListingWidget() {
-    std::unique_ptr<Wt::WText> title(std::make_unique<Wt::WText>("<h2>This is match listing</h2>"));
-    addWidget(std::move(title));
+    Wt::WToolBar *toolBar = addNew<Wt::WToolBar>();
+
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    toolBar->addButton(std::make_unique<Wt::WPushButton>("Reset"));
+    addWidget(std::unique_ptr<Wt::WToolBar>(toolBar));
 }
+
