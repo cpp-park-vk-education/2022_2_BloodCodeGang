@@ -10,10 +10,9 @@ SwipeWidget::SwipeWidget() {
 //    addWidget(std::move(title));
     setStyleClass("row pt-4 px-3 mt-5 vh-100");
 
-//    auto container = std::make_unique<Wt::WContainerWidget>();
-//    container->setStyleClass("container")
+
     auto left = addNew<Wt::WContainerWidget>();
-    left->setStyleClass("col-sm-6");
+    left->setStyleClass("col-6");
     avatar = left->addNew<Wt::WImage>(Wt::WLink("icons/a1.jpeg"));
     avatar->setAlternateText("avatar");
     avatar->setStyleClass("img-fluid border border-3 rounded");
@@ -31,10 +30,10 @@ SwipeWidget::SwipeWidget() {
 
 
     auto right = addNew<Wt::WContainerWidget>();
-    right->setStyleClass("col-sm-6");
+    right->setStyleClass("col-6");
 
     auto info = right->addNew<Wt::WContainerWidget>();
-    info->setStyleClass("container-fluid rounded bg-secondary vh-50");
+    info->setStyleClass("container rounded bg-secondary h-50 pt-2");
     info->addNew<Wt::WText>("<h2>Name, Age</h2>");
     info->addNew<Wt::WText>("Description");
 }
