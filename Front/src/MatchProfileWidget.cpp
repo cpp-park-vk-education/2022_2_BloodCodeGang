@@ -6,6 +6,6 @@
 
 
 MatchProfileWidget::MatchProfileWidget() {
-    std::unique_ptr <Wt::WText> title(std::make_unique<Wt::WText>("<h1>This is match profile</h1>"));
+    std::unique_ptr <Wt::WText> title(std::make_unique<Wt::WText>("<h3>This is match profile</h3>"));
     addWidget(std::move(title));
 }

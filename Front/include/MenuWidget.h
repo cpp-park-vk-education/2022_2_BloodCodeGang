@@ -6,11 +6,10 @@
 #define MYPROJECT_MENUWIDGET_H
 
 #include <Wt/WAnchor.h>
+#include <Wt/WApplication.h>
 #include <Wt/WContainerWidget.h>
-#include <Wt/WLink.h>
-#include <Wt/WStackedWidget.h>
-
 #include <Wt/WLineEdit.h>
+#include <Wt/WLink.h>
 #include <Wt/WMenu.h>
 #include <Wt/WMessageBox.h>
 #include <Wt/WNavigationBar.h>
@@ -18,6 +17,10 @@
 #include <Wt/WPopupMenuItem.h>
 #include <Wt/WStackedWidget.h>
 #include <Wt/WText.h>
+
+#include "MatchesListingWidget.h"
+#include "MatchProfileWidget.h"
+#include "SwipeWidget.h"
 
 
 
@@ -28,20 +31,23 @@ public:
 
 private:
 //    void onAuthEvent();
+    void handleInternalPath(const std::string &internalPath);
     void showMatchListing();
-    void showMatchProfile();
+    void showProfile();
+    void showSwipes();
 
     Wt::WStackedWidget* content_stack;
-    Wt::WNavigationBar* nav_bar;
+    Wt::WNavigationBar* navigation;
     Wt::WMenu* left_menu;
-
     Wt::WContainerWidget* links;
-    Wt::WMenuItem* profile;
-    Wt::WMenuItem* recommended;
-    Wt::WMenuItem* my_matches;
 
-    Wt::WAnchor* swipeAnchor;
-    Wt::WAnchor* listingAnchor;
+    MatchProfileWidget* profile;
+    SwipeWidget* swipes;
+    MatchesListingWidget* my_matches;
+
+//    Wt::WAnchor* swipe_anchor;
+//    Wt::WAnchor* listing_anchor;
+//    Wt::WAnchor* profile_anchor;
 
 //    MatchesListingWidget match_listing;
 //    SwipeWidget swipe;

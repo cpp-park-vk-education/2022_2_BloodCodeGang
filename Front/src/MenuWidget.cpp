@@ -7,7 +7,7 @@
 #include "MenuWidget.h"
 
 
-MenuWidget::MenuWidget() {
+MenuWidget::MenuWidget() : profile(nullptr), swipes(nullptr), my_matches(nullptr) {
 //    session_.login().changed().connect(this, &HangmanGame::onAuthEvent);
 
 //    std::unique_ptr<Auth::AuthModel> authModel
@@ -35,11 +35,11 @@ MenuWidget::MenuWidget() {
     links->hide();
     addWidget(std::unique_ptr<Wt::WContainerWidget>(links));
 
-    swipeAnchor = links->addWidget(std::make_unique<Wt::WAnchor>("/", "Swipe"));
-    swipeAnchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
+    swipe_anchor = links->addWidget(std::make_unique<Wt::WAnchor>("/", "Swipe"));
+    swipe_anchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
 
-    listingAnchor = links->addWidget(std::make_unique<Wt::WAnchor>("/matches", "Listing"));
-    listingAnchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/matches"));
+    listing_anchor = links->addWidget(std::make_unique<Wt::WAnchor>("/matches", "Listing"));
+    listing_anchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/matches"));
 
     Wt::WApplication::instance()->internalPathChanged()
             .connect(this, &MenuWidget::handleInternalPath);*/
@@ -59,24 +59,18 @@ MenuWidget::MenuWidget() {
 
 
 
-
-
-
-
-
-
     auto container = std::make_unique<Wt::WContainerWidget>();
 
-    Wt::WNavigationBar *navigation = container->addNew<Wt::WNavigationBar>();
+    navigation = container->addNew<Wt::WNavigationBar>();
     navigation->setResponsive(true);
     navigation->addStyleClass("navbar navbar-dark bg-primary");
-    navigation->setTitle("Friendify",
-                         "https://localhost/9090");
+    navigation->setTitle("Friendify","/");
     content_stack = container->addNew<Wt::WStackedWidget>();
     content_stack->addStyleClass("contents");
 
 
     left_menu = navigation->addMenu(std::make_unique<Wt::WMenu>(content_stack));
+
 
 //    auto searchResult = std::make_unique<Wt::WText>("Buy or Sell... Bye!");
 //    auto searchResult_ = searchResult.get();
@@ -103,25 +97,45 @@ MenuWidget::MenuWidget() {
 
     auto popupPtr = std::make_unique<Wt::WPopupMenu>();
     auto popup = popupPtr.get();
-    popup->addItem("Profile");
-    popup->addItem("Recommended");
-    popup->addItem("MyMatches");
 
+//    links = new Wt::WContainerWidget();
+//    links->setStyleClass("links");
+//    links->hide();
+//    addWidget(std::unique_ptr<Wt::WContainerWidget>(links));
+//
+//    swipe_anchor = links->addWidget(std::make_unique<Wt::WAnchor>("/", "Swipes"));
+//    swipe_anchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
+//
+//    listing_anchor = links->addWidget(std::make_unique<Wt::WAnchor>("/matches", "My Matches"));
+//    listing_anchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
+//
+//    profile_anchor = links->addWidget(std::make_unique<Wt::WAnchor>("/profile", "Profile"));
+//    profile_anchor->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/profile"));
 
-    popup->itemSelected().connect([=] (Wt::WMenuItem *item) {
-        auto messageBox = popup->addChild(
-                std::make_unique<Wt::WMessageBox>
-                        ("Help",
-                         Wt::WString("<p>Showing Help: {1}</p>").arg(item->text()),
-                         Wt::Icon::Information,
-                         Wt::StandardButton::Ok));
+    popup->addItem("Profile")
+        ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/profile"));
+    popup->addItem("Swipes")
+            ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
+    popup->addItem("MyMatches")
+            ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/matches"));
 
-        messageBox->buttonClicked().connect([=] {
-            popup->removeChild(messageBox);
-        });
+    Wt::WApplication::instance()->internalPathChanged()
+            .connect(this, &MenuWidget::handleInternalPath);
 
-        messageBox->show();
-    });
+//    popup->itemSelected().connect([=] (Wt::WMenuItem *item) {
+//        auto messageBox = popup->addChild(
+//                std::make_unique<Wt::WMessageBox>
+//                        ("Help",
+//                         Wt::WString("<p>Showing Help: {1}</p>").arg(item->text()),
+//                         Wt::Icon::Information,
+//                         Wt::StandardButton::Ok));
+//
+//        messageBox->buttonClicked().connect([=] {
+//            popup->removeChild(messageBox);
+//        });
+//
+//        messageBox->show();
+//    });
 
 
     auto item = std::make_unique<Wt::WMenuItem>("Menu");
@@ -129,4 +143,40 @@ MenuWidget::MenuWidget() {
     left_menu->addItem(std::move(item));
 
     addWidget(std::move(container));
+    showSwipes();
+}
+
+void MenuWidget::handleInternalPath(const std::string &internalPath) {
+        if (internalPath == "/") {
+            showSwipes();
+        } else if (internalPath == "/matches") {
+            showMatchListing();
+        } else if (internalPath == "/profile") {
+            showProfile();
+        } else {
+            Wt::WApplication::instance()->setInternalPath("/", true);
+        }
+}
+
+void MenuWidget::showMatchListing() {
+    if (!my_matches)
+        my_matches = content_stack->addWidget(std::make_unique<MatchesListingWidget>());
+
+    content_stack->setCurrentWidget(my_matches);
+}
+
+void MenuWidget::showSwipes() {
+    if (!swipes) {
+        swipes = content_stack->addWidget(std::make_unique<SwipeWidget>());
+    }
+
+    content_stack->setCurrentWidget(swipes);
+}
+
+void MenuWidget::showProfile() {
+    if (!profile) {
+        profile = content_stack->addWidget(std::make_unique<MatchProfileWidget>());
+    }
+
+    content_stack->setCurrentWidget(profile);
 }
