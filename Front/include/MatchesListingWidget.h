@@ -18,9 +18,10 @@ class MatchesListingWidget : public Wt::WContainerWidget {
 
 public:
     MatchesListingWidget();
+    int addNewMatch(std::unique_ptr<MatchIconsWidget> match);
 
 private:
-    std::vector<Wt::WImage*> match_icons;
+    std::vector<MatchIconsWidget*> match_icons;
     Wt::WPushButton* cancel_match_button;
 
 };

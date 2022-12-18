@@ -6,6 +6,7 @@ ADD_EXECUTABLE(front.wt
         src/MenuWidget.cpp include/MenuWidget.h
         src/MatchesListingWidget.cpp include/MatchesListingWidget.h
         src/SwipeWidget.cpp include/SwipeWidget.h
+        src/MatchIconsWidget.cpp include/MatchIconsWidget.h
         src/MatchProfileWidget.cpp include/MatchProfileWidget.h)
 
 

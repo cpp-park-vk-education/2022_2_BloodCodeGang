@@ -116,7 +116,7 @@ MenuWidget::MenuWidget() : profile(nullptr), swipes(nullptr), my_matches(nullptr
         ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/profile"));
     popup->addItem("Swipes")
             ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/"));
-    popup->addItem("MyMatches")
+    popup->addItem("My Matches")
             ->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/matches"));
 
     Wt::WApplication::instance()->internalPathChanged()

@@ -7,7 +7,10 @@
 #define MYPROJECT_MATCHICONSWIDGET_H
 
 #include <Wt/WContainerWidget.h>
+#include <Wt/WImage.h>
+#include <Wt/WLink.h>
 #include <Wt/WText.h>
+#include <Wt/WTemplate.h>
 
 #include "MatchProfileWidget.h"
 
@@ -15,7 +18,7 @@
 class MatchIconsWidget : public Wt::WContainerWidget {
 
 public:
-    MatchIconsWidget();
+    MatchIconsWidget(std::string avatar_path, std::string name  = "name", std::string age = "age");
 
 private:
     Wt::WText* name;

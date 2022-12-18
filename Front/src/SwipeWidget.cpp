@@ -6,8 +6,6 @@
 
 
 SwipeWidget::SwipeWidget() {
-//    std::unique_ptr <Wt::WText> title(std::make_unique<Wt::WText>("<h1>This is swipe widget</h1>"));
-//    addWidget(std::move(title));
     setStyleClass("row pt-4 px-3 mt-5 vh-100");
 
 

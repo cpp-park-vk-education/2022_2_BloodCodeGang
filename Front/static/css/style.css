@@ -1,10 +1,12 @@
-.s {
-    width: 60ex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 500px;
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    overflow: hidden;
 }
 
-.f {
-    height: 500px;
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
