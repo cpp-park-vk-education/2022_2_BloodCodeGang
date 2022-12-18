@@ -1,12 +1,12 @@
 .avatar {
     width: 200px;
     height: 200px;
-    border-radius: 10%;
+    border-radius: 5%;
     overflow: hidden;
 }
 .avatar-swipes {
     width: 550px;
-    height: 700px;
+    height: 680px;
 }
 .avatar img {
     width: 100%;

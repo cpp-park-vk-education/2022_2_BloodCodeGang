@@ -6,18 +6,18 @@
 
 
 SwipeWidget::SwipeWidget() {
-    setStyleClass("row mt-3 px-3 vh-100");
+    setStyleClass("row mt-4 px-3");
 
 
     auto left = addNew<Wt::WContainerWidget>();
-    left->setStyleClass("col-6 col-6 d-flex flex-column align-items-center");
+    left->setStyleClass("col-6 d-flex flex-column align-items-center");
 //    avatar = left->addNew<Wt::WImage>(Wt::WLink("icons/a3.jpg"));
 //    avatar->setAlternateText("avatar");
 //    avatar->setStyleClass("img-fluid border border-3 rounded");
 
     auto image_container = std::make_unique<Wt::WContainerWidget>();
-    image_container->setStyleClass("avatar avatar-swipes");
-    avatar = image_container->addNew<Wt::WImage>(Wt::WLink("icons/a3.jpg"));
+    image_container->setStyleClass("avatar avatar-swipes border border-2");
+    avatar = image_container->addNew<Wt::WImage>(Wt::WLink("icons/a1.jpeg"));
     avatar->setAlternateText("avatar");
     left->addWidget(std::move(image_container));
 
@@ -34,7 +34,7 @@ SwipeWidget::SwipeWidget() {
 
 
     auto right = addNew<Wt::WContainerWidget>();
-    right->setStyleClass("col-6");
+    right->setStyleClass("col-6 pe-5");
 
     auto info = right->addNew<Wt::WContainerWidget>();
     info->setStyleClass("container rounded bg-secondary h-50 pt-2");
