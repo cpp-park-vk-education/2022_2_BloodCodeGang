@@ -6,17 +6,23 @@
 
 
 SwipeWidget::SwipeWidget() {
-    setStyleClass("row pt-4 px-3 mt-5 vh-100");
+    setStyleClass("row mt-3 px-3 vh-100");
 
 
     auto left = addNew<Wt::WContainerWidget>();
-    left->setStyleClass("col-6");
-    avatar = left->addNew<Wt::WImage>(Wt::WLink("icons/a1.jpeg"));
+    left->setStyleClass("col-6 col-6 d-flex flex-column align-items-center");
+//    avatar = left->addNew<Wt::WImage>(Wt::WLink("icons/a3.jpg"));
+//    avatar->setAlternateText("avatar");
+//    avatar->setStyleClass("img-fluid border border-3 rounded");
+
+    auto image_container = std::make_unique<Wt::WContainerWidget>();
+    image_container->setStyleClass("avatar avatar-swipes");
+    avatar = image_container->addNew<Wt::WImage>(Wt::WLink("icons/a3.jpg"));
     avatar->setAlternateText("avatar");
-    avatar->setStyleClass("img-fluid border border-3 rounded");
+    left->addWidget(std::move(image_container));
 
     auto button_panel = left->addNew<Wt::WContainerWidget>();
-    button_panel->setStyleClass("mt-2 px-5 mx-2");
+    button_panel->setStyleClass("mt-2 container w-50");
 
     dislike = button_panel->addNew<Wt::WPushButton>();
     dislike->setStyleClass("float-start");

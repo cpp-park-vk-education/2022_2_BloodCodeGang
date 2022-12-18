@@ -4,7 +4,10 @@
     border-radius: 10%;
     overflow: hidden;
 }
-
+.avatar-swipes {
+    width: 550px;
+    height: 700px;
+}
 .avatar img {
     width: 100%;
     height: 100%;
