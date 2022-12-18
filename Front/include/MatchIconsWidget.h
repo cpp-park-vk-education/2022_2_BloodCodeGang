@@ -11,6 +11,7 @@
 #include <Wt/WLink.h>
 #include <Wt/WText.h>
 #include <Wt/WTemplate.h>
+#include <Wt/WMessageBox.h>
 
 #include "MatchProfileWidget.h"
 

@@ -14,6 +14,26 @@ MatchIconsWidget::MatchIconsWidget(std::string avatar_path, std::string name, st
     avatar->setAlternateText("avatar");
     addWidget(std::move(image_container));
 
+
+    avatar->clicked().connect([=] (const Wt::WMouseEvent& e) {
+        auto messageBox = addChild(
+                std::make_unique<Wt::WMessageBox>
+                        (name,
+                         Wt::WString("<p>Age: {1}</p>").arg(age),
+                         Wt::Icon::None,
+                         Wt::StandardButton::Ok));
+        messageBox->setMinimumSize(400,400);
+        messageBox->setClosable(true);
+        messageBox->setModal(false);
+        messageBox->buttonClicked().connect([=] {
+            removeChild(messageBox);
+        });
+
+        messageBox->show();
+    });
+
+
+
     auto info = std::make_unique<Wt::WTemplate>();
     info->setTemplateText("<div> ${name}, ${age} </div>");
     info->bindString("name", name);
