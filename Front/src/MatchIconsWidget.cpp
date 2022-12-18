@@ -6,10 +6,10 @@
 
 
 MatchIconsWidget::MatchIconsWidget(std::string avatar_path, std::string name, std::string age) {
-    setStyleClass("container my-3 w-25 h-25 d-flex flex-wrap");
+    setStyleClass("mb-2 m-3");
 
     auto image_container = std::make_unique<Wt::WContainerWidget>();
-    image_container->setStyleClass("avatar");
+    image_container->setStyleClass("avatar border border-1 rounded-3");
     avatar = image_container->addNew<Wt::WImage>(Wt::WLink(avatar_path));
     avatar->setAlternateText("avatar");
     addWidget(std::move(image_container));
@@ -18,7 +18,7 @@ MatchIconsWidget::MatchIconsWidget(std::string avatar_path, std::string name, st
     info->setTemplateText("<div> ${name}, ${age} </div>");
     info->bindString("name", name);
     info->bindString("age", age);
-    info->setStyleClass("d-flex justify-content-center");
+    info->setStyleClass("text-center");
     addWidget(std::move(info));
 }
 

@@ -23,7 +23,7 @@ std::unique_ptr<Wt::WApplication> createApplication(const Wt::WEnvironment& env)
 
 //    app->useStyleSheet("css/hangman.css");
 
-//    app->useStyleSheet("css/bootstrap.css");
+//    app->useStyleSheet("css/bootstrap.min.css");
     app->useStyleSheet("css/style.css");
     app->setTheme(std::make_shared<Wt::WBootstrap5Theme>());
     app->root()->addWidget(std::make_unique<MenuWidget>());
@@ -31,8 +31,7 @@ std::unique_ptr<Wt::WApplication> createApplication(const Wt::WEnvironment& env)
 }
 
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     try {
         Wt::WServer server(argc, argv, WTHTTP_CONFIGURATION);
 

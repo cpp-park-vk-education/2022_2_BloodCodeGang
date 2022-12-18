@@ -37,7 +37,7 @@ SwipeWidget::SwipeWidget() {
     right->setStyleClass("col-6 pe-5");
 
     auto info = right->addNew<Wt::WContainerWidget>();
-    info->setStyleClass("container rounded bg-secondary h-50 pt-2");
+    info->setStyleClass("container bg-secondary h-50 pt-2");
     info->addNew<Wt::WText>("<h2>Name, Age</h2>");
     info->addNew<Wt::WText>("Description");
 }
