@@ -9,7 +9,7 @@ MatchIconsWidget::MatchIconsWidget(std::string avatar_path, std::string name, st
     setStyleClass("mb-2 m-3");
 
     auto image_container = std::make_unique<Wt::WContainerWidget>();
-    image_container->setStyleClass("avatar border border-1 rounded-3");
+    image_container->setStyleClass("avatar border border-1");
     avatar = image_container->addNew<Wt::WImage>(Wt::WLink(avatar_path));
     avatar->setAlternateText("avatar");
     addWidget(std::move(image_container));
