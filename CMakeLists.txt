@@ -8,6 +8,7 @@ find_package(Boost COMPONENTS filesystem)
 ADD_DEFINITIONS(-DHPDF_DLL)
 
 add_subdirectory(front)
+add_subdirectory(back)
 
 #cmake_minimum_required(VERSION 3.19)
 #project(WT_EXAMPLE)

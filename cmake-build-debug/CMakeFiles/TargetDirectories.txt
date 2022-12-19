@@ -3,3 +3,6 @@
 /Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/front/CMakeFiles/front.wt.dir
 /Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/front/CMakeFiles/edit_cache.dir
 /Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/front/CMakeFiles/rebuild_cache.dir
+/Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/back/CMakeFiles/back.wt.dir
+/Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/back/CMakeFiles/edit_cache.dir
+/Users/aleksej/Projects/2022_2_BloodCodeGang/cmake-build-debug/back/CMakeFiles/rebuild_cache.dir

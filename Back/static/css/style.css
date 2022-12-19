@@ -1,0 +1,21 @@
+.avatar {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5%;
+}
+
+.avatar-swipes {
+    width: 550px;
+    height: 680px;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.listing {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
