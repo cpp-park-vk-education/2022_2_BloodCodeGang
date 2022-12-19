@@ -7,7 +7,10 @@ ADD_EXECUTABLE(front.wt
         src/MatchesListingWidget.cpp include/MatchesListingWidget.h
         src/SwipeWidget.cpp include/SwipeWidget.h
         src/MatchIconsWidget.cpp include/MatchIconsWidget.h
-        src/MatchProfileWidget.cpp include/MatchProfileWidget.h ../Back/src/SwipeResource.cpp ../Back/include/SwipeResource.h)
+        src/MatchProfileWidget.cpp include/MatchProfileWidget.h ../Back/src/SwipeResource.cpp ../Back/include/SwipeResource.h
+        src/Session.C include/Session.h
+        src/User.C include/User.h
+        )
 
 
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
@@ -17,5 +20,7 @@ INCLUDE_DIRECTORIES(include)
 TARGET_LINK_LIBRARIES(front.wt
         Wt::Wt
         Wt::HTTP
+        Wt::Dbo
+        Wt::DboSqlite3
         ${Boost_FILESYSTEM_LIBRARY}
         )

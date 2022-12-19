@@ -8,7 +8,7 @@
 #include <Wt/WBootstrap5Theme.h>
 
 #include "MenuWidget.h"
-//#include "Session.h"
+#include "Session.h"
 
 
 
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 
         server.addEntryPoint(Wt::EntryPointType::Application, createApplication);
 
-//        Session::configureAuth();
+        Session::configureAuth();
 
         server.run();
     } catch (Wt::WServer::Exception& e) {

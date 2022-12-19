@@ -7,6 +7,8 @@
 
 #include <Wt/WAnchor.h>
 #include <Wt/WApplication.h>
+#include <Wt/Auth/AuthWidget.h>
+#include <Wt/Auth/RegistrationModel.h>
 #include <Wt/WContainerWidget.h>
 #include <Wt/WLineEdit.h>
 #include <Wt/WLink.h>
@@ -20,9 +22,8 @@
 
 #include "MatchesListingWidget.h"
 #include "MatchProfileWidget.h"
+#include "Session.h"
 #include "SwipeWidget.h"
-
-
 
 class MenuWidget : public Wt::WContainerWidget {
 
@@ -40,9 +41,13 @@ private:
     Wt::WNavigationBar* navigation;
     Wt::WMenu* menu;
 
+    Session session_;
+
     MatchProfileWidget* profile;
     SwipeWidget* swipes;
     MatchesListingWidget* my_matches;
+
+    void onAuthEvent();
 };
 
 

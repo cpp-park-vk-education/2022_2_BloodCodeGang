@@ -38,10 +38,42 @@ MenuWidget::MenuWidget() : profile(nullptr), swipes(nullptr), my_matches(nullptr
     menu->addItem(std::move(item));
 
     addWidget(std::move(container));
-    showSwipes();
+
+
+    session_.login().changed().connect(this, &MenuWidget::onAuthEvent);
+
+    std::unique_ptr<Auth::AuthModel> authModel
+            = std::make_unique<Auth::AuthModel>(Session::auth(), session_.users());
+    authModel->addPasswordAuth(&Session::passwordAuth());
+    authModel->addOAuth(Session::oAuth());
+
+    std::unique_ptr<Auth::AuthWidget> authWidget
+            = std::make_unique<Auth::AuthWidget>(session_.login());
+    auto authWidgetPtr = authWidget.get();
+    authWidget->setModel(std::move(authModel));
+    authWidget->setRegistrationEnabled(true);
+
+    addWidget(std::move(authWidget));
+
+
+//    showSwipes();
+    authWidgetPtr->processEnvironment();
+}
+
+void MenuWidget::onAuthEvent() {
+    if (session_.login().loggedIn()) {
+        showSwipes();
+        handleInternalPath(WApplication::instance()->internalPath());
+    } else {
+        clear();
+//        game_ = 0;
+//        scores_ = 0;
+//        links_->hide();
+    }
 }
 
 void MenuWidget::handleInternalPath(const std::string &internalPath) {
+    if (session_.login().loggedIn()) {
         if (internalPath == "/") {
             showSwipes();
         } else if (internalPath == "/matches") {
@@ -51,6 +83,7 @@ void MenuWidget::handleInternalPath(const std::string &internalPath) {
         } else {
             Wt::WApplication::instance()->setInternalPath("/", true);
         }
+    }
 }
 
 void MenuWidget::showMatchListing() {
