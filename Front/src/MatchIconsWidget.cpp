@@ -32,8 +32,6 @@ MatchIconsWidget::MatchIconsWidget(std::string avatar_path, std::string name, st
         messageBox->show();
     });
 
-
-
     auto info = std::make_unique<Wt::WTemplate>();
     info->setTemplateText("<div> ${name}, ${age} </div>");
     info->bindString("name", name);

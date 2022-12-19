@@ -38,19 +38,11 @@ private:
 
     Wt::WStackedWidget* content_stack;
     Wt::WNavigationBar* navigation;
-    Wt::WMenu* left_menu;
-    Wt::WContainerWidget* links;
+    Wt::WMenu* menu;
 
     MatchProfileWidget* profile;
     SwipeWidget* swipes;
     MatchesListingWidget* my_matches;
-
-//    Wt::WAnchor* swipe_anchor;
-//    Wt::WAnchor* listing_anchor;
-//    Wt::WAnchor* profile_anchor;
-
-//    MatchesListingWidget match_listing;
-//    SwipeWidget swipe;
 };
 
 

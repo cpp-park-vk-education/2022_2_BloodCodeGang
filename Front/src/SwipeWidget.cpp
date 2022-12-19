@@ -11,9 +11,6 @@ SwipeWidget::SwipeWidget() {
 
     auto left = addNew<Wt::WContainerWidget>();
     left->setStyleClass("col-6 d-flex flex-column align-items-center");
-//    avatar = left->addNew<Wt::WImage>(Wt::WLink("icons/a3.jpg"));
-//    avatar->setAlternateText("avatar");
-//    avatar->setStyleClass("img-fluid border border-3 rounded");
 
     auto image_container = std::make_unique<Wt::WContainerWidget>();
     image_container->setStyleClass("avatar avatar-swipes border border-2");
