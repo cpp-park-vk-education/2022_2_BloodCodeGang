@@ -18,7 +18,7 @@ MenuWidget::MenuWidget() : profile(nullptr), swipes(nullptr), my_matches(nullptr
     content_stack->addStyleClass("contents");
 
 
-    menu = navigation->addMenu(std::make_unique<Wt::WMenu>(content_stack));
+    left_menu = navigation->addMenu(std::make_unique<Wt::WMenu>(content_stack));
 
     auto popupPtr = std::make_unique<Wt::WPopupMenu>();
     auto popup = popupPtr.get();
@@ -35,40 +35,52 @@ MenuWidget::MenuWidget() : profile(nullptr), swipes(nullptr), my_matches(nullptr
 
     auto item = std::make_unique<Wt::WMenuItem>("Menu");
     item->setMenu(std::move(popupPtr));
-    menu->addItem(std::move(item));
+    left_menu->addItem(std::move(item));
 
     addWidget(std::move(container));
+
+    right_menu = navigation->addMenu(std::make_unique<Wt::WMenu>(content_stack));
+
+
 
 
     session_.login().changed().connect(this, &MenuWidget::onAuthEvent);
 
-    std::unique_ptr<Auth::AuthModel> authModel
-            = std::make_unique<Auth::AuthModel>(Session::auth(), session_.users());
+    authModel = std::make_unique<Auth::AuthModel>(Session::auth(), session_.users());
     authModel->addPasswordAuth(&Session::passwordAuth());
     authModel->addOAuth(Session::oAuth());
 
-    std::unique_ptr<Auth::AuthWidget> authWidget
-            = std::make_unique<Auth::AuthWidget>(session_.login());
+    authWidget = std::make_unique<Auth::AuthWidget>(session_.login());
     auto authWidgetPtr = authWidget.get();
     authWidget->setModel(std::move(authModel));
     authWidget->setRegistrationEnabled(true);
 
-    addWidget(std::move(authWidget));
-
-
-//    showSwipes();
+    authWidget_ = content_stack->addWidget(std::move(authWidget));
+    Wt::WApplication::instance()->setInternalPath("/reg", true);
     authWidgetPtr->processEnvironment();
+//    showSwipes();
 }
 
 void MenuWidget::onAuthEvent() {
     if (session_.login().loggedIn()) {
-        showSwipes();
-        handleInternalPath(WApplication::instance()->internalPath());
+        a =navigation->addWidget(std::move(content_stack->removeWidget(authWidget_)));
+//        authWidget_->hide();
+//        handleInternalPath(WApplication::instance()->internalPath());
+        Wt::WApplication::instance()->setInternalPath("/", true);
     } else {
-        clear();
-//        game_ = 0;
-//        scores_ = 0;
-//        links_->hide();
+//        clear();
+//        content_stack->clear();
+//        my_matches = nullptr;
+//        swipes = nullptr;
+//        profile = nullptr;
+//        auto t =a;
+//        if (!a) {
+//            Wt::WApplication::instance()->setInternalPath("/matches", true);
+//            return;
+//        }
+//        auto f = navigation->removeWidget(a);
+//        content_stack->addWidget(std::move(f));
+        Wt::WApplication::instance()->setInternalPath("/reg", true);
     }
 }
 
@@ -78,6 +90,8 @@ void MenuWidget::handleInternalPath(const std::string &internalPath) {
             showSwipes();
         } else if (internalPath == "/matches") {
             showMatchListing();
+        }  else if (internalPath == "/reg") {
+            showAuth();
         } else if (internalPath == "/profile") {
             showProfile();
         } else {
@@ -91,13 +105,16 @@ void MenuWidget::showMatchListing() {
         my_matches = content_stack->addWidget(std::make_unique<MatchesListingWidget>());
 
     content_stack->setCurrentWidget(my_matches);
+    auto t = navigation->removeWidget(left_menu);
+    if (!t) {
+        showProfile();
+    }
 }
 
 void MenuWidget::showSwipes() {
     if (!swipes) {
         swipes = content_stack->addWidget(std::make_unique<SwipeWidget>());
     }
-
     content_stack->setCurrentWidget(swipes);
 }
 
@@ -107,4 +124,12 @@ void MenuWidget::showProfile() {
     }
 
     content_stack->setCurrentWidget(profile);
+}
+
+void MenuWidget::showAuth() {
+//    if (!authWidget) {
+//        authWidget = content_stack->addWidget(std::make_unique<MatchProfileWidget>());
+//    }
+
+    content_stack->setCurrentWidget(authWidget_);
 }

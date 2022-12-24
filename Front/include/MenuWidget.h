@@ -36,10 +36,12 @@ private:
     void showMatchListing();
     void showProfile();
     void showSwipes();
+    void showAuth();
 
     Wt::WStackedWidget* content_stack;
     Wt::WNavigationBar* navigation;
-    Wt::WMenu* menu;
+    Wt::WMenu* left_menu;
+    Wt::WMenu* right_menu;
 
     Session session_;
 
@@ -47,6 +49,11 @@ private:
     SwipeWidget* swipes;
     MatchesListingWidget* my_matches;
 
+    std::unique_ptr<Auth::AuthModel> authModel;
+    std::unique_ptr<Auth::AuthWidget> authWidget;
+    Auth::AuthWidget* authWidget_;
+
+    Auth::AuthWidget* a;
     void onAuthEvent();
 };
 

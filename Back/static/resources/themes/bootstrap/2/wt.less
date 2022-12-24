@@ -5,7 +5,7 @@
 @import "mixins.less";
 
 /*
- * Extend menu support to include sub menus
+ * Extend left_menu support to include sub menus
  */
 .nav > li > .nav {
   display: none;
@@ -17,9 +17,9 @@
 }
 
 /*
- * More dropdown-menu support
+ * More dropdown-left_menu support
  */
-.dropdown-menu {
+.dropdown-left_menu {
 
   .disabled a,
   .disabled a:hover {
@@ -58,7 +58,7 @@
 }
 
 /*
- * Make label in any menu item inline
+ * Make label in any left_menu item inline
  */
 .nav li label {
   display: inline;
@@ -72,17 +72,17 @@
 }
 
 @media (max-width: 979px) {
-  .nav-collapse .dropdown-menu {
+  .nav-collapse .dropdown-left_menu {
     display: block !important;
     position: static !important;
   }
 
-  .nav-collapse .dropdown-menu li > a:hover {
+  .nav-collapse .dropdown-left_menu li > a:hover {
     color: @navbarLinkColorActive;
     background: #f2f2f2;
   }
 
-  .nav-collapse .dropdown-menu .active >a {
+  .nav-collapse .dropdown-left_menu .active >a {
     color: inherit;
     background: inherit;
   }
@@ -94,7 +94,7 @@
 }
 
 /*
- * Less odd drop down menu support in navbar
+ * Less odd drop down left_menu support in navbar
  */
 .navbar .nav > li.submenu > a:hover,
 .navbar .nav > li.submenu > a.active {
@@ -107,11 +107,11 @@
 /*
  * Fix submens in popup menus in navbar
  */
-.navbar .nav > li > .dropdown-menu.submenu:before {
+.navbar .nav > li > .dropdown-left_menu.submenu:before {
   display: none;
 }
 
-.navbar .nav > li > .dropdown-menu.submenu:after {
+.navbar .nav > li > .dropdown-left_menu.submenu:after {
   display: none;
 }
 
@@ -123,7 +123,7 @@
 }
 
 /*
- * Fix open drop down menu
+ * Fix open drop down left_menu
  */
 .navbar .nav li > .dropdown-toggle.active {
   color: #555555;
@@ -516,7 +516,7 @@
   }
 }
 
-.dropdown-menu.typeahead {
+.dropdown-left_menu.typeahead {
   cursor: pointer;
 
   li:not(.active) > a:hover {
